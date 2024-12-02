@@ -185,4 +185,4 @@ def download_filtered_data(n_clicks, start_date, end_date, modalities, hospitals
 if __name__ == "__main__":
     from waitress import serve
     port = int(os.environ.get("PORT", 8080))
-    serve(app, host="0.0.0.0
+    serve(app, host="0.0.0.0", port=port)
