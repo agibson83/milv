@@ -1,12 +1,9 @@
 import dash
-
-app = dash.Dash(__name__)
-
 from dash import dcc, html, dash_table
 from dash.dependencies import Input, Output
 import plotly.express as px
+import pandas as pd
 import os
-
 
 # Load data
 data_path = os.getenv('DATA_PATH', 'Above_Average_Turnaround.csv')  # Use an environment variable for the data path
@@ -187,6 +184,5 @@ def download_filtered_data(n_clicks, start_date, end_date, modalities, hospitals
 # Run the app
 if __name__ == "__main__":
     from waitress import serve
-    import os
     port = int(os.environ.get("PORT", 8080))
-    serve(app, host="0.0.0.0", port=port)
+    serve(app, host="0.0.0.0
